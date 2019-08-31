@@ -5,6 +5,7 @@ import com.xcy.video.pojo.User;
 import com.xcy.video.pojo.Video;
 import com.xcy.video.service.UserService;
 import com.xcy.video.utils.ImageCut;
+import com.xcy.video.utils.MD5Utils;
 import com.xcy.video.utils.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,8 +39,13 @@ public class UserManage {
     @RequestMapping("/loginUser.action")
     @ResponseBody
     public String user(User user, HttpSession session) {
+
+        String password = user.getPassword();
+        String md5 = MD5Utils.getMd5(password);
+        user.setPassword(md5);
+
         boolean b = userService.selectUser(user);
-        System.out.println(b);
+
         if (b) {
             session.setAttribute("userAccount", user.getEmail());
             return "success";
@@ -63,6 +69,11 @@ public class UserManage {
     @RequestMapping("/insertUser.action")
     @ResponseBody
     public String insertUser(User user) {
+
+        String password = user.getPassword();
+        String md5 = MD5Utils.getMd5(password);
+        user.setPassword(md5);
+
         boolean a = userService.insertUser(user);
         if (a) {
             return "success";
@@ -194,7 +205,6 @@ public class UserManage {
         user.setImgUrl(imgUrl);
         user.setEmail(email);
         userService.updateUserImageByEmail(user);
-
 
         return "redirect:/user/showMyProfile.action";
     }

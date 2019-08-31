@@ -59,7 +59,7 @@ public class CourseManage {
     @RequestMapping("saveCourse")
     public String saveCourse(Course course){
         courseService.saveCourse(course);
-        System.out.println(course);
+
 
         return "redirect:/coursemanage";
     }

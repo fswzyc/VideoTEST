@@ -12,7 +12,7 @@ import java.util.Random;
 public final class MailUtils {
 
     private static final String USER = "1649692109@qq.com"; // 发件人称号，同邮箱地址
-    private static final String PASSWORD = "rtsylevkciguihed"; // 如果是qq邮箱可以使户端授权码，或者登录密码
+    private static final String PASSWORD = "mpycjxemdlixddhh"; // 如果是qq邮箱可以使户端授权码，或者登录密码
 
     /**
      *
@@ -83,7 +83,7 @@ public final class MailUtils {
     }
 
     public static void main(String[] args) throws Exception { // 做测试用
-        MailUtils.sendMail("1649692109@qq.com","测试邮件随机生成的验证码是："+getValidateCode(6),"你好，这是一封测试邮件，无需回复。");
+        MailUtils.sendMail("1959560381@qq.com","测试邮件随机生成的验证码是："+getValidateCode(6),"你好，这是一封测试邮件，无需回复。");
         System.out.println("发送成功");
     }
 

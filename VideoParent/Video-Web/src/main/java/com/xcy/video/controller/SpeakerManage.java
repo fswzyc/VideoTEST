@@ -18,7 +18,7 @@ public class SpeakerManage {
     SpeakerService speakerService;
     @RequestMapping("/teachermanage")
     public String showSpeaker(Model model, Speaker speaker){
-        int a = 10 /0;
+
 
         speaker.setBegin((speaker.getPage() - 1) * speaker.getRows() );
         List<Speaker> speakers1 = speakerService.selectAll(speaker);
@@ -29,8 +29,8 @@ public class SpeakerManage {
         page.setRows(speakers1);
         model.addAttribute("page",page);
 
-    List<Speaker> speakers = speakerService.selectAllSpeaker();
-    model.addAttribute("list",speakers);
+   /* List<Speaker> speakers = speakerService.selectAllSpeaker();
+    model.addAttribute("list",speakers);*/
         return "behind/teachermanage";
     }
 

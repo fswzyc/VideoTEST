@@ -84,16 +84,16 @@
         </thead>
         <tbody>
         <c:forEach items="${page.rows}" var="speaker" varStatus="s">
-        <tr>
-            <td>${s.count}</td>
-            <td>${speaker.speakerName}</td>
-            <td>${speaker.speakerJob}</td>
-            <td style="padding-top: 7px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">${speaker.speakerDesc}</td>
+            <tr>
+                <td>${s.count}</td>
+                <td>${speaker.speakerName}</td>
+                <td>${speaker.speakerJob}</td>
+                <td style="padding-top: 7px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">${speaker.speakerDesc}</td>
 
-            <td><a href="${pageContext.request.contextPath}/updatSpeaker?id=${speaker.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-            <td><a href="${pageContext.request.contextPath}/deleteSpeaker?id=${speaker.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <td><a href="${pageContext.request.contextPath}/updatSpeaker?id=${speaker.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="${pageContext.request.contextPath}/deleteSpeaker?id=${speaker.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
 
-        </tr>
+            </tr>
         </c:forEach>
 
         </tbody>
